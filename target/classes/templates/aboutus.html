@@ -2,134 +2,302 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <title>About Us - Surya Car Pool</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>About Us - Surya Car Pool</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        /* Hero Section Background */
-        .hero-section {
-            background: linear-gradient(rgba(0, 76, 255, 0.6), rgba(0, 76, 255, 0.6)),
-                        url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 90px 0;
-            text-align: center;
-            border-radius: 12px;
-        }
+	<style>
+		/* Hero Section Background */
+		.hero-section {
+			background: linear-gradient(rgba(0, 76, 255, 0.6), rgba(0, 76, 255, 0.6)),
+				url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1600&q=80');
+			background-size: cover;
+			background-position: center;
+			color: #fff;
+			padding: 90px 0;
+			text-align: center;
+			border-radius: 12px;
+		}
 
-        /* About Section Background */
-        .about-bg {
-            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-                        url('https://images.unsplash.com/photo-1518443952243-1e2b79c138ec?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            border-radius: 12px;
-            padding: 60px 40px;
-        }
+		/* About Section Background */
+		.about-bg {
+			background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+				url('https://images.unsplash.com/photo-1518443952243-1e2b79c138ec?auto=format&fit=crop&w=1600&q=80');
+			background-size: cover;
+			background-attachment: fixed;
+			background-position: center;
+			border-radius: 12px;
+			padding: 60px 40px;
+		}
 
-        .section-title {
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+		.section-title {
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
 
-        .icon-box i {
-            font-size: 40px;
-            color: #0d6efd;
-        }
+		.icon-box i {
+			font-size: 40px;
+			color: #0d6efd;
+		}
 
-        .icon-box {
-            padding: 20px;
-            border-radius: 8px;
-            background: #ffffffcc;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+		.icon-box {
+			padding: 20px;
+			border-radius: 8px;
+			background: #ffffffcc;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+			transition: 0.3s;
+		}
 
-        .icon-box:hover {
-            transform: translateY(-5px);
-        }
+		.icon-box:hover {
+			transform: translateY(-5px);
+		}
 
-        /* Footer Background */
-        footer {
-            background: url('https://images.unsplash.com/photo-1529078155058-5d716f45d604?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-        }
+		/* Self-driving section specific styles (added) */
+		.selfdriving-section {
+			margin-top: 40px;
+		}
 
-        footer .overlay {
-            background: rgba(0,0,0,0.6);
-            padding: 20px 0;
-        }
-    </style>
+		.selfdriving-card {
+			background: rgba(255, 255, 255, 0.95);
+			border-radius: 10px;
+			padding: 18px;
+			box-shadow: 0 6px 18px rgba(13, 110, 253, 0.06);
+			height: 100%;
+		}
 
-    <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+		.selfdriving-item {
+			display: flex;
+			gap: 12px;
+			align-items: flex-start;
+			margin-bottom: 14px;
+		}
+
+		.selfdriving-item i {
+			font-size: 22px;
+			color: #0d6efd;
+			margin-top: 4px;
+			min-width: 26px;
+		}
+
+		.selfdriving-item h6 {
+			margin: 0 0 4px 0;
+			font-weight: 700;
+			font-size: 0.95rem;
+		}
+
+		.selfdriving-item p {
+			margin: 0;
+			color: #495057;
+			font-size: 0.92rem;
+		}
+
+		/* Footer Background */
+		footer {
+			background: url('https://images.unsplash.com/photo-1529078155058-5d716f45d604?auto=format&fit=crop&w=1600&q=80');
+			background-size: cover;
+			background-position: center;
+			color: #fff;
+		}
+
+		footer .overlay {
+			background: rgba(0, 0, 0, 0.6);
+			padding: 20px 0;
+		}
+	</style>
+
+	<!-- Icons -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="/home">Surya Car Pool</a>
-        </div>
-    </nav>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="color: chocolate;">
+		<div class="container-fluid">
 
-    <!-- Hero -->
-    <div class="container mt-4">
-        <div class="hero-section">
-            <h1 class="display-5 fw-bold" style="background-color: aquamarine; color: darkgoldenrod;">About Surya Car Pool</h1>
-            <p class="lead">Connecting people. Saving fuel. Making travel smarter.</p>
-        </div>
-    </div>
+			<!-- Home Icon Added -->
+			<a href="/home" class="me-2">
+				<i class="bi bi-house-door-fill" style="font-size: 1.7rem; color: white;"></i>
+			</a>
 
-    <!-- About Section with Background -->
-    <div class="container my-5">
-        <div class="about-bg">
-            <h2 class="section-title text-center">Who We Are</h2>
-            <p class="text-center mb-5">
-                Surya Car Pool is a community-driven ride-sharing platform designed to make daily travel 
-                easier, affordable, and eco-friendly. We help riders and car owners connect seamlessly 
-                for safe and comfortable travel experiences.
-            </p>
+			<a class="navbar-brand fw-bold" href="/home">Surya Car Pool</a>
+		</div>
+	</nav>
 
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="icon-box text-center">
-                        <i class="bi bi-people-fill"></i>
-                        <h5 class="mt-3 fw-bold">Community Focused</h5>
-                        <p>We bring people together by enabling shared travel that helps reduce traffic and pollution.</p>
-                    </div>
-                </div>
+	<!-- Hero -->
+	<div class="container mt-4">
+		<div class="hero-section" style="
+	        background-image: 
+	            
+	            linear-gradient(rgba(0, 76, 255, 0.6), rgba(0, 76, 255, 0.6)),
+	            url('/images/logo.png');
+	        background-repeat: no-repeat;
+	        background-size: 220px, cover, cover;
+	        background-position: center center, center, center;
+	    ">
+			<h1 class="display-5 fw-bold" style="background-color: aquamarine; color: darkgoldenrod;">About Surya Car
+				Pool</h1>
+			<p class="lead">Connecting people. Saving fuel. Making travel smarter.</p>
+		</div>
+	</div>
 
-                <div class="col-md-4">
-                    <div class="icon-box text-center">
-                        <i class="bi bi-shield-check"></i>
-                        <h5 class="mt-3 fw-bold">Safe & Reliable</h5>
-                        <p>Verified users, transparent profiles, and a platform designed with your safety in mind.</p>
-                    </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="icon-box text-center">
-                        <i class="bi bi-cash-stack"></i>
-                        <h5 class="mt-3 fw-bold">Affordable Travel</h5>
-                        <p>Share fuel costs and enjoy budget-friendly rides without compromising comfort.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- About Section with Background -->
+	<div class="container my-5">
+		<div class="about-bg">
+			<h2 class="section-title text-center">Who We Are</h2>
+			<p class="text-center mb-5">
+				Surya Car Pool is a community-driven ride-sharing platform designed to make daily travel
+				easier, affordable, and eco-friendly. We help riders and car owners connect seamlessly
+				for safe and comfortable travel experiences.
+			</p>
 
-    <!-- Footer with Background -->
-    <footer>
-        <div class="overlay text-center" style="color: rgb(128, 0, 64);">
-            <span>&copy; 2025 Surya Car Pool. All rights reserved.</span>
-        </div>
-    </footer>
+			<div class="row g-4">
+				<div class="col-md-4">
+					<div class="icon-box text-center">
+						<i class="bi bi-people-fill"></i>
+						<h5 class="mt-3 fw-bold">Community Focused</h5>
+						<p>We bring people together by enabling shared travel that helps reduce traffic and pollution.
+						</p>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="icon-box text-center">
+						<i class="bi bi-shield-check"></i>
+						<h5 class="mt-3 fw-bold">Safe & Reliable</h5>
+						<p>Verified users, transparent profiles, and a platform designed with your safety in mind.</p>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="icon-box text-center">
+						<i class="bi bi-cash-stack"></i>
+						<h5 class="mt-3 fw-bold">Affordable Travel</h5>
+						<p>Share fuel costs and enjoy budget-friendly rides without compromising comfort.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- NEW: Self-Driving Cars Section (added) -->
+			<div class="selfdriving-section">
+				<h3 class="section-title text-center mt-4">Self-Driving Cars & the Future of Ridesharing</h3>
+				<p class="text-center mb-4">Autonomous vehicles (AVs) are shaping how people move. Below are concise,
+					practical points on technology, benefits, challenges, and how Surya Car Pool can approach this
+					transition.</p>
+
+				<div class="row g-3">
+					<div class="col-md-6">
+						<div class="selfdriving-card">
+							<div class="selfdriving-item">
+								<i class="bi bi-robot"></i>
+								<div>
+									<h6>Levels of Autonomy</h6>
+									<p>Autonomy ranges from driver assistance (Level 1–2) to full automation (Level 5).
+										Initial deployment in ride-sharing will focus on supervised and geofenced Level
+										4
+										solutions.</p>
+								</div>
+							</div>
+
+							<div class="selfdriving-item">
+								<i class="bi bi-speedometer2"></i>
+								<div>
+									<h6>Efficiency & Fleet Utilization</h6>
+									<p>AVs can reduce idle time and rebalancing costs, increasing vehicle utilization
+										and
+										lowering per-ride costs when integrated into shared fleets.</p>
+								</div>
+							</div>
+
+							<div class="selfdriving-item">
+								<i class="bi bi-shield-lock"></i>
+								<div>
+									<h6>Safety & Redundancy</h6>
+									<p>Modern AVs use multi-sensor stacks (lidar, radar, cameras) and redundant systems
+										to
+										meet rigorous safety requirements—important for user trust and regulatory
+										approval.
+									</p>
+								</div>
+							</div>
+
+							<div class="selfdriving-item">
+								<i class="bi bi-people"></i>
+								<div>
+									<h6>Driver & Workforce Transition</h6>
+									<p>Transition plans should include retraining programs (e.g., vehicle supervisors,
+										fleet maintenance, remote assistance) to support drivers affected by automation.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="selfdriving-card">
+							<div class="selfdriving-item">
+								<i class="bi bi-gear"></i>
+								<div>
+									<h6>Integration with Existing Platforms</h6>
+									<p>APIs and telemetry from AV fleets must integrate with booking, pricing, and
+										routing
+										to provide a seamless user experience and dynamic dispatching.</p>
+								</div>
+							</div>
+
+							<div class="selfdriving-item">
+								<i class="bi bi-graph-up"></i>
+								<div>
+									<h6>Cost & Environmental Impact</h6>
+									<p>While AVs may reduce operational costs long term, short-term investments and
+										energy
+										impacts depend on vehicle efficiency and fleet electrification—an opportunity to
+										improve sustainability when paired with EVs.</p>
+								</div>
+							</div>
+
+							<div class="selfdriving-item">
+								<i class="bi bi-globe2"></i>
+								<div>
+									<h6>Regulation & Public Policy</h6>
+									<p>Local regulations and safety certifications vary by region. Pilot programs with
+										clear reporting, insurance models, and stakeholder engagement are recommended.
+									</p>
+								</div>
+							</div>
+
+							<div class="selfdriving-item">
+								<i class="bi bi-lightning-charge"></i>
+								<div>
+									<h6>Phased Pilots & User Acceptance</h6>
+									<p>Start with low-risk, high-control pilots (fixed routes, daytime operation).
+										Collect
+										user feedback, safety metrics, and iterate before scaling broadly.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Short actionable suggestions -->
+				<div class="mt-4 text-center">
+					<p class="mb-0"><strong>Actionable next steps:</strong> monitor AV pilots in nearby cities, explore
+						limited co-operation with vetted fleet operators, and run a small user trial to evaluate cost,
+						safety and customer acceptance.</p>
+				</div>
+			</div>
+			<!-- END NEW SECTION -->
+
+		</div>
+	</div>
+
+	<!-- Footer with Background -->
+	<footer>
+		<div class="overlay text-center" style="color: rgb(128, 0, 64);">
+			<span>&copy; 2025 Surya Car Pool. All rights reserved.</span>
+		</div>
+	</footer>
 
 </body>
+
 </html>
