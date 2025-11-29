@@ -19,6 +19,15 @@
 			border-radius: 12px;
 		}
 
+		body {
+			background: linear-gradient(135deg, #e3f2fd, #ffffff);
+			background-image: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80');
+			background-attachment: fixed;
+			background-size: cover;
+			background-repeat: no-repeat;
+			backdrop-filter: blur(5px);
+		}
+
 		/* About Section Background */
 		.about-bg {
 			background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
@@ -37,7 +46,7 @@
 
 		.icon-box i {
 			font-size: 40px;
-			color: #0d6efd;
+			color: rgb(255, 0, 0);
 		}
 
 		.icon-box {
@@ -115,12 +124,60 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="color: chocolate;">
 		<div class="container-fluid">
 
-			<!-- Home Icon Added -->
-			<a href="/home" class="me-2">
-				<i class="bi bi-house-door-fill" style="font-size: 1.7rem; color: white;"></i>
+			<!-- Logo -->
+			<a href="index.html" class="navbar-brand d-flex align-items-center">
+				<img src="/images/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+				Surya Car Pool
 			</a>
 
-			<a class="navbar-brand fw-bold" href="/home">Surya Car Pool</a>
+			<!-- Navbar toggler for small screens -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Navbar links with icons -->
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+
+					<li class="nav-item">
+						<a class="nav-link" href="/home">
+							<i class="bi bi-house-door-fill"></i> Home
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/users/ui">
+							<i class="bi bi-people-fill"></i> Users
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/rides/ui">
+							<i class="bi bi-car-front-fill"></i> Rides
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/bookings/ui">
+							<i class="bi bi-journal-check"></i> Bookings
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/aboutus/ui">
+							<i class="bi bi-info-circle-fill"></i> About Us
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/contactus/ui">
+							<i class="bi bi-envelope-fill"></i> Contact Us
+						</a>
+					</li>
+
+				</ul>
+			</div>
 		</div>
 	</nav>
 
@@ -129,7 +186,7 @@
 		<div class="hero-section" style="
 	        background-image: 
 	            
-	            linear-gradient(rgba(0, 76, 255, 0.6), rgba(0, 76, 255, 0.6)),
+	            linear-gradient(rgba(225, 225, 225, 0), rgba(225, 225, 225, 0)),
 	            url('/images/logo.png');
 	        background-repeat: no-repeat;
 	        background-size: 220px, cover, cover;
@@ -137,7 +194,8 @@
 	    ">
 			<h1 class="display-5 fw-bold" style="background-color: aquamarine; color: darkgoldenrod;">About Surya Car
 				Pool</h1>
-			<p class="lead">Connecting people. Saving fuel. Making travel smarter.</p>
+			<p class="lead" style="background-color: aquamarine; color: darkgoldenrod;">Connecting people. Saving fuel.
+				Making travel smarter.</p>
 		</div>
 	</div>
 
